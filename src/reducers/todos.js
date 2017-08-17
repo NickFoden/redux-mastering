@@ -5,7 +5,13 @@ const initialState = {
 const todos = (state = initialState, action) => {
   switch(action.type) {
     case 'ADD_TODO':
-      return {}
+      return {
+        ...state,
+        data: [...state.data, {
+          id: action.id,
+          text: action.text
+        }]
+      }
 
     case  'DELETE_TODO':
       return {}

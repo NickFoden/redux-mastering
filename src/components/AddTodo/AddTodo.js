@@ -1,12 +1,13 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { addTodo } from '../../actions'
 
-const AddTodo = () => (
+const AddTodo = (props) => (
   <form onSubmit={(event) => {
     event.preventDefault()
 
     let input = event.target.userInput.value
-
-    console.log(input)
+    props.dispatch(addTodo(input))
 
   }}>
     <input type="text" name="userInput" />
@@ -14,4 +15,4 @@ const AddTodo = () => (
   </form>
 )
 
-export default AddTodo
+export default connect()(AddTodo)
