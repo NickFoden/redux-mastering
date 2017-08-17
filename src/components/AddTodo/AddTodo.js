@@ -9,6 +9,8 @@ const AddTodo = (props) => (
     let input = event.target.userInput.value
     props.dispatch(addTodo(input))
 
+    event.target.userInput.value = ''
+
   }}>
     <input type="text" name="userInput" />
     <button> Submit </button>
