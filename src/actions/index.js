@@ -5,7 +5,7 @@ export const addTodo = (text) => ({
   id: Math.random()
 })
 
-const DELETE_TODO = ' DELETE_TODO'
+const DELETE_TODO = 'DELETE_TODO'
 export const deleteTodo = (id) => ({
   type: DELETE_TODO,
   id
