@@ -9,7 +9,7 @@ mongoose.connect('mongodb://localhost:27017/todo-app-redux')
 
 app.use(bodyParser.json())
 
-app.get('/api/todos', (req, res) => {
+app.get('/api/todo', (req, res) => {
     Todo.find({}, (err, todos) => {
         if(err) {
             res.send(err)
@@ -19,7 +19,7 @@ app.get('/api/todos', (req, res) => {
     })
 })
 
-app.post('/api/todos', (req, res) => {
+app.post('/api/todo', (req, res) => {
     const record = new Todo()
 
     record.text = req.body.text
@@ -29,7 +29,13 @@ app.post('/api/todos', (req, res) => {
             res.send(err)
         }
 
-        res.json(record)
+        Todo.find({}, (err, todos) => {
+            if(err) {
+                res.send(err)
+            }
+    
+            res.json(todos)
+        })
     })
 })
 

@@ -4,10 +4,9 @@ export const deleteTodo = (id) => ({
   id
 })
 
-export const saveTodo =  (text) => {
+export const saveTodo = (text) => {
   return dispatch => {
-    fetch('http://localhost:8080/api/todos', {
-      mode: 'no-cors',  
+    fetch('http://localhost:8080/api/todo', {
       method: 'POST',
       headers: {
         'Content-Type' : 'application/json'
