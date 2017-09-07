@@ -5,12 +5,14 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
+    "fetch": "^1.1.0",
     "mongoose": "^4.11.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.11",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "thunk": "0.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
