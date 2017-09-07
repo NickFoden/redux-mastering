@@ -2,8 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 import AddTodo from './components/AddTodo/AddTodo'
 import List from './components/List/List'
+import { connect } from 'react-redux'
+import { getTodos } from './actions'
 
 class App extends Component {
+
+  componentDidMount() {
+    this.props.dispatch(getTodos())
+  }
+
   render() {
     return (
       <div className="App">
@@ -14,4 +21,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect()(App);
